@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+    <div class="main">
+        <form action="" class="form" id="form__demo">
+            <header class="header">
+                <h2 class="header__title">Form Demo</h2>
+                <h4 class="header__title-sub">Note: Với đầy đủ các kiểu Input và Validate</h4>
+            </header>
+            <section class="main__sec">
+                <div class="form__group">
+                    <label for="fullname" class="form__label">Tên đầy đủ:</label>
+                    <input rules="required|max:32" type="text" name="fullname" id="fullname" placeholder="VD: Đinh Tuấn Đạt" class="form__input">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="country" class="form__label">Nơi sản xuất:</label>
+                    <select name="country" id="country" rules="required" class="form__input">
+                        <option value="">--Chọn tỉnh thành--</option>
+                        <option value="ThaiNguyen">Thái Nguyên</option>
+                        <option value="ThaiNguyen">Hà Nội</option>
+                        <option value="NamDinh">Nam Định</option>
+                    </select>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="gender" class="form__label">Giới tính:</label>
+                    <div class="input__radio">
+                        <div class="input__sec">
+                            <input rules="required" type="radio" name="gender" value="male" class="form__input">
+                            <h4 class="input__note">Nam</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="radio" name="gender" value="female" class="form__input">
+                            <h4 class="input__note">Nữ</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="radio" name="gender" value="other" class="form__input">
+                            <h4 class="input__note">Khác</h4>
+                        </div>
+                    </div>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="avatar" class="form__label">Chọn ảnh đại diện:</label>
+                    <input rules="required" type="file" name="avatar" id="avatar" class="form__input">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="favourite" class="form__label">Ngôn ngữ ưa thích:</label>
+                    <div class="input__wrapper">
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="Russian" class="form__input">
+                            <h4 class="input__note">Tiếng Nga</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="C++" class="form__input">
+                            <h4 class="input__note">C++</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="Python" class="form__input">
+                            <h4 class="input__note">Python</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="JavaScript" class="form__input">
+                            <h4 class="input__note">JavaScript</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="English" class="form__input">
+                            <h4 class="input__note">Tiếng Anh</h4>
+                        </div>
+                        <div class="input__sec">
+                            <input rules="required" type="checkbox" name="favourite" value="PHP" class="form__input">
+                            <h4 class="input__note">PHP</h4>
+                        </div>
+                    </div>
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="email" class="form__label">Email:</label>
+                    <input rules="required|email" type="email" name="email" id="email" placeholder="VD: diayti2003@gmail.com" class="form__input">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="password" class="form__label">Mật khẩu:</label>
+                    <input rules="required|min:6" type="password" name="password" id="password" placeholder="Nhập mật khẩu của bạn" class="form__input">
+                    <span class="form__message"></span>
+                </div>
+                <div class="form__group">
+                    <label for="password_confirm" class="form__label">Xác nhận mật khẩu:</label>
+                    <input rules="required|min:6|similar" type="password" name="password_confirm" id="password_confirm" placeholder="Nhập lại mật khẩu trên" class="form__input">
+                    <span class="form__message"></span>
+                </div>
+                <!-- <div class="form__group">
+                    <label for="fullname" class="form__label">Nhập lại mật khẩu:</label>
+                    <input rules="required" type="text" name="fullname" id="fullname" placeholder="VD: Đinh Tuấn Đạt" class="form__input">
+                    <span class="form__message"></span>
+                </div> -->
+            </section>
+            <button class="form__submit">Submit</button>
+        </form>
+    </div>
+    <script src="./app.js"></script>
+    <script>
+        var form= new Validator('#form__demo');
+        form.onSubmit= function( data){
+            console.log( data);
+        }
+    </script>
+</body>
+</html>
